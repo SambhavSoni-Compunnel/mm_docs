@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83.2% 53.3%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 48%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Prose / Markdown styles */
+.prose {
+  @apply text-foreground max-w-none;
+}
+
+.prose h1 {
+  @apply text-3xl font-bold tracking-tight text-foreground mt-0 mb-4 pb-3 border-b border-border;
+}
+
+.prose h2 {
+  @apply text-2xl font-semibold tracking-tight text-foreground mt-10 mb-4 pb-2 border-b border-border;
+}
+
+.prose h3 {
+  @apply text-xl font-semibold text-foreground mt-8 mb-3;
+}
+
+.prose h4 {
+  @apply text-lg font-semibold text-foreground mt-6 mb-2;
+}
+
+.prose h5, .prose h6 {
+  @apply text-base font-semibold text-foreground mt-4 mb-2;
+}
+
+.prose p {
+  @apply text-foreground/80 leading-7 mb-4;
+}
+
+.prose a {
+  @apply text-primary underline underline-offset-4 hover:text-primary/80 transition-colors;
+}
+
+.prose ul {
+  @apply list-disc pl-6 mb-4 space-y-1;
+}
+
+.prose ol {
+  @apply list-decimal pl-6 mb-4 space-y-1;
+}
+
+.prose li {
+  @apply text-foreground/80 leading-7;
+}
+
+.prose blockquote {
+  @apply border-l-4 border-primary/40 pl-4 py-1 my-4 bg-muted/50 rounded-r-md italic text-muted-foreground;
+}
+
+.prose table {
+  @apply w-full border-collapse text-sm mb-6;
+}
+
+.prose thead {
+  @apply bg-muted;
+}
+
+.prose th {
+  @apply text-left font-semibold px-4 py-2 border border-border text-foreground;
+}
+
+.prose td {
+  @apply px-4 py-2 border border-border text-foreground/80;
+}
+
+.prose tr:nth-child(even) {
+  @apply bg-muted/30;
+}
+
+.prose code {
+  @apply bg-muted text-primary font-mono text-sm px-1.5 py-0.5 rounded;
+}
+
+.prose pre {
+  @apply bg-zinc-950 dark:bg-zinc-900 rounded-lg overflow-x-auto mb-6 relative;
+  @apply border border-zinc-800;
+}
+
+.prose pre code {
+  @apply bg-transparent text-zinc-100 p-4 block text-sm leading-6 font-mono;
+}
+
+.prose hr {
+  @apply border-border my-8;
+}
+
+.prose strong {
+  @apply font-semibold text-foreground;
+}
+
+.prose em {
+  @apply italic;
+}
+
+/* Heading anchor links */
+.prose h1 a,
+.prose h2 a,
+.prose h3 a,
+.prose h4 a {
+  @apply no-underline text-inherit hover:text-primary transition-colors;
+}
+
+/* Highlight.js theme overrides for dark code blocks */
+.hljs-keyword { @apply text-violet-400; }
+.hljs-built_in { @apply text-cyan-400; }
+.hljs-type { @apply text-emerald-400; }
+.hljs-literal { @apply text-orange-400; }
+.hljs-number { @apply text-amber-400; }
+.hljs-string { @apply text-green-400; }
+.hljs-comment { @apply text-zinc-500 italic; }
+.hljs-attr { @apply text-sky-400; }
+.hljs-variable { @apply text-red-400; }
+.hljs-function { @apply text-blue-400; }
+.hljs-title { @apply text-yellow-400; }
+.hljs-tag { @apply text-red-400; }
+.hljs-name { @apply text-red-400; }
+.hljs-selector-id { @apply text-yellow-400; }
+.hljs-selector-class { @apply text-yellow-400; }
+.hljs-punctuation { @apply text-zinc-400; }
+.hljs-operator { @apply text-pink-400; }
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-border rounded-full;
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-muted-foreground/40;
+}
+
+/* Animations */
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out forwards;
+}
+
+@keyframes skeleton-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.skeleton {
+  @apply bg-muted rounded animate-pulse;
+}
