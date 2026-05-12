@@ -3,7 +3,7 @@
 ## Method 1: Using the @extract_user_id decorator
 
 ```python
-from flask import request
+from flask import request 
 from flask_restful import Resource
 from helpers.authenticate import token_required, permission_required
 from helpers.user_specfic_helper import extract_user_id
