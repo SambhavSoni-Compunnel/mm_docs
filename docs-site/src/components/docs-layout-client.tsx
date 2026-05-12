@@ -6,6 +6,7 @@ import { BookOpen, Menu, X } from "lucide-react";
 import { Sidebar } from "@/components/sidebar";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { SearchDialog } from "@/components/search-dialog";
+import { NavigationProgress } from "@/components/navigation-progress";
 import type { DocTree } from "@/lib/docs";
 
 interface SearchItem {
@@ -26,6 +27,7 @@ export function DocsLayoutClient({ children, tree, searchData }: Props) {
 
   return (
     <div className="min-h-screen bg-background flex flex-col">
+      <NavigationProgress />
       {/* Top nav */}
       <header className="border-b border-border sticky top-0 z-50 bg-background/80 backdrop-blur-sm h-16">
         <div className="flex items-center h-full px-4 gap-4">

@@ -102,6 +102,7 @@ export function SearchDialog({ searchData }: Props) {
             className="text-muted-foreground hover:text-foreground transition-colors shrink-0"
             aria-label="Clear search"
           >
+          
             <X className="w-3.5 h-3.5" />
           </button>
         ) : (
@@ -130,7 +131,7 @@ export function SearchDialog({ searchData }: Props) {
                   <Link
                     key={item.slug.join("/")}
                     href={`/docs/${item.slug.join("/")}`}
-                    onMouseDown={() => { setFocused(false); setQuery(""); }}
+                    onClick={() => { setFocused(false); setQuery(""); }}
                     className="flex items-start gap-3 px-4 py-3 hover:bg-muted transition-colors border-b border-border/40 last:border-0"
                   >
                     <FileText className="w-4 h-4 text-muted-foreground mt-0.5 shrink-0" />
