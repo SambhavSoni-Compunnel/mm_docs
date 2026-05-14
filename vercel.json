@@ -1,4 +1,3 @@
 {
-  "framework": "nextjs",
-  "rootDirectory": "docs-site"
+  "framework": "nextjs"
 }
